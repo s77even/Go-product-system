@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"github.com/kataras/iris"
-	"github.com/kataras/iris/mvc"
+	"github.com/kataras/iris/v12"
+	"github.com/kataras/iris/v12/mvc"
 	"imooc-product/common"
 	"imooc-product/datamodels"
 	"imooc-product/services"
@@ -23,17 +23,35 @@ func (p *ProductController)GetAll() mvc.View{
 	}
 }
 
-func (p * ProductController)PostUpdate(){
+func (p *ProductController) PostUpdate() {
 	product := &datamodels.Product{}
 	p.Ctx.Request().ParseForm()
-	dec := common.NewDecoder(&common.DecoderOptions{
-		TagName: "imooc",
-	})
-	if err:=dec.Decode(p.Ctx.Request().Form,product);err!=nil{
+	dec := common.NewDecoder(&common.DecoderOptions{TagName: "imooc"})
+	if err := dec.Decode(p.Ctx.Request().Form, product); err != nil {
 		p.Ctx.Application().Logger().Debug(err)
 	}
 	err := p.ProductService.UpdateProduct(product)
-	if err!=nil{
+	if err != nil {
+		p.Ctx.Application().Logger().Debug(err)
+	}
+	p.Ctx.Redirect("/product/all")
+}
+
+func (p *ProductController)GetAdd()mvc.View{
+	return mvc.View{
+		Name: "product/add.html",
+	}
+}
+
+func (p *ProductController) PostAdd() {
+	product := &datamodels.Product{}
+	p.Ctx.Request().ParseForm()
+	dec := common.NewDecoder(&common.DecoderOptions{TagName: "imooc"})
+	if err := dec.Decode(p.Ctx.Request().Form, product); err != nil {
+		p.Ctx.Application().Logger().Debug(err)
+	}
+	_, err := p.ProductService.InsertProduct(product)
+	if err != nil {
 		p.Ctx.Application().Logger().Debug(err)
 	}
 	p.Ctx.Redirect("/product/all")

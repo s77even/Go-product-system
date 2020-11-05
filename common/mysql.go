@@ -2,6 +2,7 @@ package common
 
 import (
 	"database/sql"
+	"fmt"
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -14,6 +15,10 @@ func NewMysqlConn() (db *sql.DB, err error) {
 
 //GetResultRow 从数据库中获取一行
 func GetResultRow(rows *sql.Rows) map[string]string {
+	if rows == nil {
+		fmt.Println("rows实例不能为nil")
+		return nil
+	}
 	columns, _ := rows.Columns()
 	scanArgs := make([]interface{}, len(columns))
 	values := make([]interface{}, len(columns))

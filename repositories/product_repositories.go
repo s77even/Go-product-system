@@ -2,6 +2,7 @@ package repositories
 
 import (
 	"database/sql"
+	"fmt"
 	"imooc-product/common"
 	"imooc-product/datamodels"
 	"strconv"
@@ -79,7 +80,7 @@ func (p *ProductManager)Update(product *datamodels.Product)(err error){
 	if err = p.Conn(); err != nil{
 	return err
 	}//判断连接是否可用
-	sql := "Updata product SET productName=?,productNum=?,productImage=?,productUrl=? where ID="+strconv.FormatInt(product.Id,10)
+	sql := "Updata product SET productName=?,productNum=?,productImage=?,productUrl=? where ID="+strconv.FormatInt(product.ID,10)
 	stem , err := p.mysqlConn.Prepare(sql)
 	if err != nil {
 		return err
@@ -95,17 +96,20 @@ func (p *ProductManager)SelectByKey(productID int64) (productResult *datamodels.
 	if err=p.Conn();err!=nil{
 		return &datamodels.Product{} , err
 	}
-	sql := "select * from"+ p.table + "where ID= " + strconv.FormatInt(productID,10)
+	sql := "select * from "+ p.table + " where ID= " + strconv.FormatInt(productID,10)
 	row ,errRow :=  p.mysqlConn.Query(sql)
-	defer row.Close()
+
 	if errRow != nil {
 		return &datamodels.Product{},errRow
 	}
 	result := common.GetResultRow(row)
+
 	if len(result)==0{
 		return &datamodels.Product{},nil
 	}
-	common.DataToStructByTagSql(result,productResult)//数据映射
+	fmt.Println(result)
+	productResult = &datamodels.Product{}             // 指针要分配内存
+	common.DataToStructByTagSql(result,productResult) //数据映射
 	return productResult,nil
 }
 //SelectAll 查询全表
@@ -113,9 +117,8 @@ func (p *ProductManager)SelectAll() (productArray []*datamodels.Product,errProdu
 	if err:=p.Conn();err!=nil{
 		return nil ,err
 	}
-	sql := "select * from" + p.table
+	sql := "select * from " + p.table
 	rows , err := p.mysqlConn.Query(sql)
-	defer rows.Close()
 	if err != nil {
 		return nil ,err
 	}

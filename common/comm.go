@@ -43,6 +43,7 @@ func TypeConversion(value string, ntype string) (reflect.Value, error) {
 //DataToStructByTagSql 根据tag将数据映射到结构体中
 func DataToStructByTagSql(data map[string]string, obj interface{}){
 	objvalue := reflect.ValueOf(obj).Elem()
+	//fmt.Println(objvalue.Type().Field(3).Tag.Get("sql"))
 	for i:=0 ; i<objvalue.NumField(); i++{
 		value:= data[objvalue.Type().Field(i).Tag.Get("sql")]
 		name:= objvalue.Type().Field(i).Name

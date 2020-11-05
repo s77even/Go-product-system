@@ -2,8 +2,8 @@ package main
 
 import (
 	"context"
-	"github.com/kataras/iris"
-	"github.com/kataras/iris/mvc"
+	"github.com/kataras/iris/v12"
+	"github.com/kataras/iris/v12/mvc"
 	"imooc-product/backend/web/controllers"
 	"imooc-product/common"
 	"imooc-product/repositories"
@@ -17,10 +17,10 @@ func main() {
 	// 设置错误模式 在mvc下提示错误
 	app.Logger().SetLevel("debug")
 	//注册末班
-	template := iris.HTML("./backend/web/views", ".html").Layout("shared/layout.html").Reload(true)
+	template := iris.HTML("./web/views", ".html").Layout("shared/layout.html").Reload(true)
 	app.RegisterView(template)
 	//设置模板目标
-	app.HandleDir("/assets", iris.Dir("./backend/web/assets"))
+	app.HandleDir("/assets", "./web/assets") //替代了staticweb
 	//异常跳转
 	app.OnAnyErrorCode(func(ctx iris.Context) {
 		ctx.ViewData("message", ctx.Values().GetStringDefault("message", "访问的页面出错！"))
