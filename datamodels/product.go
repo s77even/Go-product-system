@@ -2,7 +2,7 @@ package datamodels
 
 type Product struct {
 	//商品id
-	ID  int64  `json:"id" sql:"ID" imooc:"ID"`
+	ID  int64  `json:"id" sql:"id" imooc:"ID"`
 	//商品名称
 	ProductName string `json:"ProductName" sql:"productName" imooc:"ProductName"`
 	//商品数量

@@ -2,7 +2,6 @@ package repositories
 
 import (
 	"database/sql"
-	"fmt"
 	"imooc-product/common"
 	"imooc-product/datamodels"
 	"strconv"
@@ -11,7 +10,7 @@ import (
 //先开发接口
 //实现定义的接口
 
-type Iproduct interface {
+type IProductRepository interface {
 	//连接数据
 	Conn() error
 	Insert(*datamodels.Product) (int64, error)
@@ -20,17 +19,17 @@ type Iproduct interface {
 	SelectByKey(int64) (*datamodels.Product, error)
 	SelectAll() ([]*datamodels.Product, error)
 }
-type  ProductManager struct {
+type  ProductManagerRepository struct {
 	table string
 	mysqlConn *sql.DB
 }
-//NewProductManager 构造函数 并且能够检查是否实现接口
-func NewProductManager (table string , db *sql.DB)Iproduct{
-	return &ProductManager{table: table,mysqlConn: db}
+//NewProductManagerRepository 构造函数 并且能够检查是否实现接口
+func NewProductManagerRepostory (table string , db *sql.DB)IProductRepository{
+	return &ProductManagerRepository{table: table,mysqlConn: db}
 }
 
 // Conn 初始化连接
-func (p *ProductManager)Conn()(err error){
+func (p *ProductManagerRepository)Conn()(err error){
 	if p.mysqlConn == nil{
 		mysql , err := common.NewMysqlConn()
 		if err != nil{
@@ -44,7 +43,7 @@ func (p *ProductManager)Conn()(err error){
 	return
 }
 // Insert 插入...
-func (p *ProductManager)Insert(product *datamodels.Product) (productId int64,err error){
+func (p *ProductManagerRepository)Insert(product *datamodels.Product) (productId int64,err error){
 	if err = p.Conn(); err != nil{
 		return
 	}
@@ -60,11 +59,11 @@ func (p *ProductManager)Insert(product *datamodels.Product) (productId int64,err
 	return result.LastInsertId()
 }
 //Delete 删除...
-func (p *ProductManager)Delete(productId int64) bool{
+func (p *ProductManagerRepository)Delete(productId int64) bool{
 	if err := p.Conn(); err != nil{
 		return false
 	}//判断连接是否可用
-	sql := "delete from product where ID=?"
+	sql := "delete from product where id=?"
 	stem , err := p.mysqlConn.Prepare(sql)
 	if err != nil {
 		return false
@@ -76,11 +75,11 @@ func (p *ProductManager)Delete(productId int64) bool{
 	return true
 }
 //Update 更新...
-func (p *ProductManager)Update(product *datamodels.Product)(err error){
+func (p *ProductManagerRepository)Update(product *datamodels.Product)(err error){
 	if err = p.Conn(); err != nil{
 	return err
 	}//判断连接是否可用
-	sql := "Updata product SET productName=?,productNum=?,productImage=?,productUrl=? where ID="+strconv.FormatInt(product.ID,10)
+	sql := "Update product SET productName=?,productNum=?,productImage=?,productUrl=? where id="+strconv.FormatInt(product.ID,10)
 	stem , err := p.mysqlConn.Prepare(sql)
 	if err != nil {
 		return err
@@ -92,11 +91,11 @@ func (p *ProductManager)Update(product *datamodels.Product)(err error){
 	return nil
 }
 //SelectByKey 根据id查询记录
-func (p *ProductManager)SelectByKey(productID int64) (productResult *datamodels.Product,err error){
+func (p *ProductManagerRepository)SelectByKey(productID int64) (productResult *datamodels.Product,err error){
 	if err=p.Conn();err!=nil{
 		return &datamodels.Product{} , err
 	}
-	sql := "select * from "+ p.table + " where ID= " + strconv.FormatInt(productID,10)
+	sql := "select * from "+ p.table + " where id= " + strconv.FormatInt(productID,10)
 	row ,errRow :=  p.mysqlConn.Query(sql)
 
 	if errRow != nil {
@@ -107,13 +106,13 @@ func (p *ProductManager)SelectByKey(productID int64) (productResult *datamodels.
 	if len(result)==0{
 		return &datamodels.Product{},nil
 	}
-	fmt.Println(result)
+	//fmt.Println(result)
 	productResult = &datamodels.Product{}             // 指针要分配内存
 	common.DataToStructByTagSql(result,productResult) //数据映射
 	return productResult,nil
 }
 //SelectAll 查询全表
-func (p *ProductManager)SelectAll() (productArray []*datamodels.Product,errProduct error){
+func (p *ProductManagerRepository)SelectAll() (productArray []*datamodels.Product,errProduct error){
 	if err:=p.Conn();err!=nil{
 		return nil ,err
 	}

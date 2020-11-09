@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"imooc-product/common"
 	"imooc-product/repositories"
+	"imooc-product/services"
 )
 
 func main(){
@@ -12,9 +13,12 @@ func main(){
 	//productArray,  _ := productm.SelectByKey(1)
 	//fmt.Println(productArray)
 	order := repositories.NewOrderManagerRepository("orders",db)
-	orderArray , _ := order.SelectAll()
-
-	for i , v := range orderArray{
-		fmt.Println(i,v)
+	oredeService := services.NewOrderService(order)
+	result , err:= oredeService.GetAllOrder()
+	if err != nil {
+		fmt.Println(err)
+	}
+	for _ , v := range result{
+		fmt.Println(v)
 	}
 }

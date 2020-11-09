@@ -66,7 +66,7 @@ var App = (function () {
           elements: {
             rectangle: {
               borderWidth: 2,
-              borderColor: 'rgb(0, 255, 0)',
+              borderColor: 'rgb(0,255,0)',
               borderSkipped: 'bottom'
             }
           },

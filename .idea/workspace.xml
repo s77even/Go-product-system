@@ -1,21 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f153c126-c731-4077-b364-2cb0b0576cc0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/web/controllers/order_controller.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/views/order/view.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datamodels/order.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repositories/order_repostory.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/order_service.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/test/test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/backend/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/web/controllers/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/controllers/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/web/controllers/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/controllers/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/web/assets/js/app-charts-chartjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/assets/js/app-charts-chartjs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/web/assets/lib/chartjs/Chart.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/assets/lib/chartjs/Chart.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/web/controllers/product_controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/controllers/product_controller.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/web/views/product/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/views/product/view.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/web/views/shared/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/views/shared/error.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/web/views/shared/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/views/shared/layout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/comm.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/comm.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/mysql.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/mysql.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datamodels/product.go" beforeDir="false" afterPath="$PROJECT_DIR$/datamodels/product.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repositories/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/repositories/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/repositories/product_repositories.go" beforeDir="false" afterPath="$PROJECT_DIR$/repositories/product_repositories.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repositories/test/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/repositories/test/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/product_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/product_service.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,18 +74,21 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend/web/views/product" />
-    <property name="settings.editor.selected.configurable" value="go.vgo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend/web/views/order" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GOPRO\src\imooc-product\backend\web\views\order" />
+      <recent name="D:\GOPRO\src\imooc-product\backend\web\views\product" />
+      <recent name="D:\GOPRO\src\imooc-product\backend\web\views\shared" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\GOPRO\src\imooc-product\services\test" />
+      <recent name="D:\GOPRO\src\imooc-product\backend\web\views\order" />
       <recent name="D:\GOPRO\src\imooc-product\repositories\test" />
       <recent name="D:\GOPRO\src\imooc-product\backend\web\views\product" />
       <recent name="D:\GOPRO\src\imooc-product\backend\web" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\GOPRO\src\imooc-product\backend\web\views\product" />
-      <recent name="D:\GOPRO\src\imooc-product\backend\web\views\shared" />
     </key>
   </component>
   <component name="RunManager" selected="Go Build.go build main.go">
@@ -92,9 +119,29 @@
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
+    <configuration name="go build order_controller.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="imooc-product" />
+      <working_directory value="$PROJECT_DIR$/backend/web/controllers" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/backend/web/controllers/order_controller.go" />
+      <package value="imooc-product" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build test.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="imooc-product" />
+      <working_directory value="$PROJECT_DIR$/services/test" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/services/test/test.go" />
+      <package value="imooc-product" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Go Build.go build main.go" />
+        <item itemvalue="Go Build.go build order_controller.go" />
+        <item itemvalue="Go Build.go build test.go" />
         <item itemvalue="Go Build.go build main.go (2)" />
         <item itemvalue="Go Build.go build main.go (1)" />
       </list>
@@ -104,6 +151,17 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
   </component>
@@ -112,49 +170,57 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1604413227397" />
-    <state width="1877" height="259" key="GridCell.Tab.0.bottom" timestamp="1604500529832">
+    <state width="1860" height="214" key="GridCell.Tab.0.bottom" timestamp="1604894551443">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="259" key="GridCell.Tab.0.bottom/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1604500529832" />
-    <state width="1877" height="259" key="GridCell.Tab.0.center" timestamp="1604500529832">
+    <state width="1860" height="214" key="GridCell.Tab.0.bottom/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1604894551443" />
+    <state width="1860" height="214" key="GridCell.Tab.0.center" timestamp="1604894551443">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="259" key="GridCell.Tab.0.center/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1604500529832" />
-    <state width="1877" height="259" key="GridCell.Tab.0.left" timestamp="1604500529832">
+    <state width="1860" height="214" key="GridCell.Tab.0.center/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1604894551443" />
+    <state width="1860" height="214" key="GridCell.Tab.0.left" timestamp="1604894551442">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="259" key="GridCell.Tab.0.left/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1604500529832" />
-    <state width="1877" height="259" key="GridCell.Tab.0.right" timestamp="1604500529832">
+    <state width="1860" height="214" key="GridCell.Tab.0.left/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1604894551442" />
+    <state width="1860" height="214" key="GridCell.Tab.0.right" timestamp="1604894551443">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="259" key="GridCell.Tab.0.right/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1604500529832" />
-    <state width="1860" height="322" key="GridCell.Tab.1.bottom" timestamp="1604499720935">
+    <state width="1860" height="214" key="GridCell.Tab.0.right/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1604894551443" />
+    <state width="1860" height="345" key="GridCell.Tab.1.bottom" timestamp="1604893539462">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="322" key="GridCell.Tab.1.bottom/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1604499720935" />
-    <state width="1860" height="322" key="GridCell.Tab.1.center" timestamp="1604499720935">
+    <state width="1860" height="345" key="GridCell.Tab.1.bottom/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1604893539462" />
+    <state width="1860" height="345" key="GridCell.Tab.1.center" timestamp="1604893539462">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="322" key="GridCell.Tab.1.center/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1604499720935" />
-    <state width="1860" height="322" key="GridCell.Tab.1.left" timestamp="1604499720935">
+    <state width="1860" height="345" key="GridCell.Tab.1.center/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1604893539462" />
+    <state width="1860" height="345" key="GridCell.Tab.1.left" timestamp="1604893539462">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="322" key="GridCell.Tab.1.left/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1604499720935" />
-    <state width="1860" height="322" key="GridCell.Tab.1.right" timestamp="1604499720935">
+    <state width="1860" height="345" key="GridCell.Tab.1.left/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1604893539462" />
+    <state width="1860" height="345" key="GridCell.Tab.1.right" timestamp="1604893539462">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="322" key="GridCell.Tab.1.right/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1604499720935" />
-    <state x="461" y="164" key="SettingsEditor" timestamp="1604413449128">
+    <state width="1860" height="345" key="GridCell.Tab.1.right/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1604893539462" />
+    <state x="461" y="164" key="SettingsEditor" timestamp="1604889360017">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="164" key="SettingsEditor/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1604413449128" />
+    <state x="461" y="164" key="SettingsEditor/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1604889360017" />
     <state x="734" y="282" key="com.goide.refactor.extractInterface.GoExtractInterfaceDialog" timestamp="1604320925771">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="734" y="282" key="com.goide.refactor.extractInterface.GoExtractInterfaceDialog/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1604320925771" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1604324597872">
+    <state x="513" y="290" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1604886536499">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1604324597872" />
+    <state x="513" y="290" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1604886536499" />
+    <state x="-1341" y="0" width="1357" height="831" key="dock-window-1" timestamp="1604890898273">
+      <screen x="-1600" y="0" width="1600" height="860" />
+    </state>
+    <state x="-1341" y="0" width="1357" height="831" key="dock-window-1/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1604890898273" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1604889322932">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1604889322932" />
   </component>
 </project>

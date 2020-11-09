@@ -14,10 +14,10 @@ type IProductService interface {
  }
 
  type ProductService struct {
- 	productRepository repositories.Iproduct
+ 	productRepository repositories.IProductRepository
  }
 
- func NewProductService(productRepository repositories.Iproduct)IProductService{
+ func NewProductService(productRepository repositories.IProductRepository)IProductService{
  	return &ProductService{productRepository: productRepository}
  }
  func (p *ProductService)GetProductByID(productID int64)(*datamodels.Product, error){
