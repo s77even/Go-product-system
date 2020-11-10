@@ -52,6 +52,7 @@ func (p *ProductManagerRepository)Insert(product *datamodels.Product) (productId
 	if errSql !=nil{
 		return 0,errSql
 	}
+	defer stem.Close()
 	result, errStem := stem.Exec(product.ProductName,product.ProductNum,product.ProductImage,product.ProductUrl)
 	if errStem != nil{
 		return 0,errStem
@@ -68,6 +69,7 @@ func (p *ProductManagerRepository)Delete(productId int64) bool{
 	if err != nil {
 		return false
 	}
+	defer stem.Close()
 	_ , err =stem.Exec(productId)
 	if err != nil {
 		return false
@@ -84,6 +86,7 @@ func (p *ProductManagerRepository)Update(product *datamodels.Product)(err error)
 	if err != nil {
 		return err
 	}
+	defer stem.Close()
 	_ , err =stem.Exec(product.ProductName,product.ProductNum,product.ProductImage,product.ProductUrl)
 	if err != nil {
 		return err
@@ -97,12 +100,11 @@ func (p *ProductManagerRepository)SelectByKey(productID int64) (productResult *d
 	}
 	sql := "select * from "+ p.table + " where id= " + strconv.FormatInt(productID,10)
 	row ,errRow :=  p.mysqlConn.Query(sql)
-
 	if errRow != nil {
 		return &datamodels.Product{},errRow
 	}
+	defer row.Close()
 	result := common.GetResultRow(row)
-
 	if len(result)==0{
 		return &datamodels.Product{},nil
 	}
@@ -121,6 +123,7 @@ func (p *ProductManagerRepository)SelectAll() (productArray []*datamodels.Produc
 	if err != nil {
 		return nil ,err
 	}
+	defer rows.Close()
 	result := common.GetResultRows(rows)
 	if len(result)==0{
 		return nil, nil

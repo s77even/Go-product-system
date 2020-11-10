@@ -50,6 +50,7 @@ func (o *OrderManagerRepository) Insert(order *datamodels.Order)(orderID int64, 
 	if errSql !=nil{
 		return 0,errSql
 	}
+	defer stem.Close()
 	result, errStem := stem.Exec(order.UserId,order.ProductId,order.OrderStatus)
 	if errStem != nil{
 		return 0,errStem
@@ -66,6 +67,7 @@ func (o *OrderManagerRepository)Delete(orderID int64)bool{
 	if err != nil{
 		return false
 	}
+	defer stem.Close()
 	_ , err =stem.Exec(orderID)
 	if err != nil {
 		return false
@@ -82,6 +84,7 @@ func (o *OrderManagerRepository)Update(order *datamodels.Order)error{
 	if err != nil {
 		return err
 	}
+	defer stem.Close()
 	_ ,err = stem.Exec(order.UserId, order.ProductId , order.OrderStatus)
 	if err != nil {
 		return err
@@ -94,12 +97,12 @@ func (o *OrderManagerRepository)SelectByKey(orderId int64)(order *datamodels.Ord
 		return &datamodels.Order{}, err
 	}
 	sql := "select * from "+ o.table + " where ID=" + strconv.FormatInt(orderId,10)
-	row , errow := o.mysqlConn.Query(sql)
-	if errow != nil {
-		return &datamodels.Order{},err
+	row , errRow := o.mysqlConn.Query(sql)
+	if errRow != nil {
+		return &datamodels.Order{},errRow
 	}
+	defer row.Close()
 	result := common.GetResultRow(row)
-
 	if len(result)==0{
 		return &datamodels.Order{},nil
 	}
@@ -117,6 +120,7 @@ func (o *OrderManagerRepository)SelectAll() (orderArray []*datamodels.Order,err 
 	if err != nil {
 		return nil ,err
 	}
+	defer rows.Close()
 	result := common.GetResultRows(rows)
 	if len(result)==0{
 		return nil, nil
@@ -139,5 +143,6 @@ func (o *OrderManagerRepository)SelectAllWithInfo()(orderMap map[int]map[string]
 	if errRows != nil {
 		return nil, errRows
 	}
+	defer rows.Close()
 	return common.GetResultRows(rows), err
 }

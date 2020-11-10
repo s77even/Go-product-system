@@ -2,6 +2,8 @@ package common
 
 import (
 	"errors"
+	"github.com/kataras/iris/v12"
+	"net/http"
 	"reflect"
 	"strconv"
 	"time"
@@ -58,4 +60,15 @@ func DataToStructByTagSql(data map[string]string, obj interface{}){
 		}
 		objValue.FieldByName(name).Set(val)
 	}
+}
+
+func GlobalCookie(ctx iris.Context, name string, value string, timeout int) {
+	ctx.SetCookie(
+		&http.Cookie{
+			Name:   name,
+			Value:  value,
+			Path:   "/",
+			MaxAge: timeout,
+		},
+	)
 }

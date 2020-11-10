@@ -48,7 +48,7 @@ func GetResultRows(rows *sql.Rows) map[int]map[string]string {
 	i := 0
 	result := make(map[int]map[string]string)
 	for rows.Next() {
-		rows.Scan(scans...)
+		_ = rows.Scan(scans...)
 		row := make(map[string]string)
 		for k, v := range vals {
 			key := columns[k]
