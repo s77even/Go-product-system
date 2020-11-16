@@ -4,13 +4,12 @@ import (
 	"context"
 	"github.com/kataras/iris/v12"
 	"github.com/kataras/iris/v12/mvc"
-	"github.com/kataras/iris/v12/sessions"
 	"imooc-product/common"
+	"imooc-product/fronted/middlerware"
 	"imooc-product/fronted/web/controllers"
 	"imooc-product/repositories"
 	"imooc-product/services"
 	"log"
-	"time"
 )
 
 func main(){
@@ -22,7 +21,9 @@ func main(){
 	template := iris.HTML("./web/views", ".html").Layout("shared/layout.html").Reload(true)
 	app.RegisterView(template)
 	//设置模板目标
-	app.HandleDir("/public", "./web/public") //替代了staticweb
+	app.HandleDir("public", "./fronted/web/public") //替代了staticweb
+	//访问生成的html静态文件
+	app.HandleDir("html","./fronted/web/htmlProductShow")
 	//异常跳转
 	app.OnAnyErrorCode(func(ctx iris.Context) {
 		ctx.ViewData("message", ctx.Values().GetStringDefault("message", "访问的页面出错！"))
@@ -36,16 +37,21 @@ func main(){
 	ctx ,cancel := context.WithCancel(context.Background())
 	defer cancel()
 	//注册控制器
-	sess := sessions.New(sessions.Config{
-		Cookie: "helloworld",
-		Expires: 60*time.Second,
-	})
 	userRepository := repositories.NewUserManagerRepository("user",db)
 	userService := services.NewUserService(userRepository)
 	user := mvc.New(app.Party("/user"))
-	user.Register(userService,ctx,sess.Start)
+	user.Register(userService,ctx)
 	user.Handle(new(controllers.UserController))
 
+	productRepository := repositories.NewProductManagerRepostory("product",db)
+	productService := services.NewProductService(productRepository)
+	order := repositories.NewOrderManagerRepository("orders" , db)
+	orderService := services.NewOrderService(order)
+	proProduct:=app.Party("/product")
+	product := mvc.New(proProduct)
+	proProduct.Use(middlerware.AuthConProduct)
+	product.Register(productService,orderService,ctx)
+	product.Handle(new(controllers.ProductController))
 	// 启动服务
 	app.Run(
 		iris.Addr("localhost:8082"),

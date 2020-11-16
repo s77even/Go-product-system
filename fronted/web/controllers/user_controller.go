@@ -1,12 +1,14 @@
 package controllers
 
 import (
+	"fmt"
 	"github.com/kataras/golog"
 	"github.com/kataras/iris/v12"
 	"github.com/kataras/iris/v12/mvc"
 	"github.com/kataras/iris/v12/sessions"
 	"imooc-product/common"
 	"imooc-product/datamodels"
+	"imooc-product/encrypt"
 	"imooc-product/services"
 	"strconv"
 )
@@ -46,10 +48,12 @@ return mvc.View{
 }
 }
 func (c *UserController)PostLogin() mvc.Response{
+	//获取用户提交的表单信息
 	var(
 		userName =c.Ctx.FormValue("userName")
 		password =c.Ctx.FormValue("password")
 		)
+	//验证账号密码是否正确 从数据库中  （可改进未使用redis）
 	user , isOk := c.Service.IsPwdSuccess(userName,password)
 	if !isOk{
 		golog.Error("密码错误")
@@ -57,9 +61,15 @@ func (c *UserController)PostLogin() mvc.Response{
 			Path: "/user/login",
 		}
 	}
-
+	// 写入用户ID到cookie
 	common.GlobalCookie(c.Ctx,"uid",strconv.FormatInt(user.ID,10),0)
-	c.Session.Set("userID",strconv.FormatInt(user.ID,10))
+	uidByte := []byte(strconv.FormatInt(user.ID,10))
+	uidString , err :=encrypt.EnPwdCode(uidByte)
+	if err != nil {
+		fmt.Println(err)
+	}
+	//c.Session.Set("userID",strconv.FormatInt(user.ID,10))
+	common.GlobalCookie(c.Ctx,"sign",uidString,0)
 	return mvc.Response{
 		Path: "/product",
 	}
