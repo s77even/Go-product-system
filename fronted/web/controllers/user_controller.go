@@ -71,6 +71,6 @@ func (c *UserController)PostLogin() mvc.Response{
 	//c.Session.Set("userID",strconv.FormatInt(user.ID,10))
 	common.GlobalCookie(c.Ctx,"sign",uidString,0)
 	return mvc.Response{
-		Path: "/product",
+		Path: "/product/",
 	}
 }
