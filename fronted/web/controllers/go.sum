@@ -135,6 +135,8 @@ github.com/kataras/blocks v0.0.2/go.mod h1:KPyOYc1M3MgzsznVcdjErtcYWO3AZXQbQ8fMY
 github.com/kataras/golog v0.0.10/go.mod h1:yJ8YKCmyL+nWjERB90Qwn+bdyBZsaQwU3bTVFgkFIp8=
 github.com/kataras/golog v0.0.18 h1:Td7hcKN25yzqB/0SO5iohOsMk5Mq5V9kDtM5apaJLY0=
 github.com/kataras/golog v0.0.18/go.mod h1:jRYl7dFYqP8aQj9VkwdBUXYZSfUktm+YYg1arJILfyw=
+github.com/kataras/golog v0.1.5 h1:WbXu2rUc3yX/QB2mcNP5AjR64UlaaxkYrGMkO58T4Js=
+github.com/kataras/golog v0.1.5/go.mod h1:jOSQ+C5fUqsNSwurB/oAHq1IFSb0KI3l6GMa7xB6dZA=
 github.com/kataras/iris v0.0.2 h1:Tteb6pXLN9QiXvTCXCP31LRHu1LHlVA6Rappr9vWa1c=
 github.com/kataras/iris v0.0.2/go.mod h1:ab8yy1jWHFgoI+/B+zoIsQpVY/XUY+NNvVCXJ27Zat8=
 github.com/kataras/iris/v12 v12.1.8 h1:O3gJasjm7ZxpxwTH8tApZsvf274scSGQAUpNe47c37U=
@@ -145,6 +147,8 @@ github.com/kataras/neffos v0.0.16/go.mod h1:BqWkF1c6cSyqw85dfCdqXxK5cMo/hyBGhtNu
 github.com/kataras/pio v0.0.2/go.mod h1:hAoW0t9UmXi4R5Oyq5Z4irTbaTsOemSrDGUtaTl7Dro=
 github.com/kataras/pio v0.0.8 h1:6pX6nHJk7DAV3x1dEimibQF2CmJLlo0jWVmM9yE9KY8=
 github.com/kataras/pio v0.0.8/go.mod h1:NFfMp2kVP1rmV4N6gH6qgWpuoDKlrOeYi3VrAIWCGsE=
+github.com/kataras/pio v0.0.10 h1:b0qtPUqOpM2O+bqa5wr2O6dN4cQNwSmFd6HQqgVae0g=
+github.com/kataras/pio v0.0.10/go.mod h1:gS3ui9xSD+lAUpbYnjOGiQyY7sUMJO+EHpiRzhtZ5no=
 github.com/kataras/sitemap v0.0.5 h1:4HCONX5RLgVy6G4RkYOV3vKNcma9p236LdGOipJsaFE=
 github.com/kataras/sitemap v0.0.5/go.mod h1:KY2eugMKiPwsJgx7+U103YZehfvNGOXURubcGyk0Bz8=
 github.com/kataras/tunnel v0.0.1 h1:VsphzEnN8es/0tw7lwxC94pHwUa60nE9SYojKhbWjME=
@@ -237,6 +241,8 @@ github.com/spf13/jwalterweatherman v1.0.0/go.mod h1:cQK4TGJAtQXfYWX+Ddv3mKDzgVb6
 github.com/spf13/pflag v1.0.3/go.mod h1:DYY7MBk1bdzusC3SYhjObp+wFpr4gzcvqqNjLnInEg4=
 github.com/spf13/viper v1.3.2/go.mod h1:ZiWeW+zYFKm7srdB9IoDzzZXaJaI5eL9QjNiN/DMA2s=
 github.com/square/go-jose/v3 v3.0.0-20200630053402-0a67ce9b0693/go.mod h1:6hSY48PjDm4UObWmGLyJE9DxYVKTgR9kbCspXXJEhcU=
+github.com/streadway/amqp v1.0.0 h1:kuuDrUJFZL1QYL9hUNuCxNObNzB0bV/ZG5jV3RWAQgo=
+github.com/streadway/amqp v1.0.0/go.mod h1:AZpEONHx3DKn8O/DFsRAY58/XVQiIPMTMB1SddzLXVw=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/testify v1.2.2/go.mod h1:a8OnRcib4nhh0OaRAV+Yts87kKdq0PP7pXfy6kDkUVs=
 github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UVUgZn+9EI=
@@ -333,6 +339,8 @@ golang.org/x/sys v0.0.0-20200808120158-1030fc2bf1d9 h1:yi1hN8dcqI9l8klZfy4B8mJvF
 golang.org/x/sys v0.0.0-20200808120158-1030fc2bf1d9/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20200930185726-fdedc70b468f h1:+Nyd8tzPX9R7BWHguqsrbFdRx3WQ/1ib8I44HXV5yTA=
 golang.org/x/sys v0.0.0-20200930185726-fdedc70b468f/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
+golang.org/x/sys v0.0.0-20201126233918-771906719818 h1:f1CIuDlJhwANEC2MM87MBEVMr3jl5bifgsfj90XAF9c=
+golang.org/x/sys v0.0.0-20201126233918-771906719818/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/text v0.3.0/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
 golang.org/x/text v0.3.2/go.mod h1:bEr9sfX3Q8Zfm5fL9x+3itogRgK3+ptLWKqgva+5dAk=
 golang.org/x/text v0.3.3 h1:cokOdA+Jmi5PJGXLlLllQSgYigAEfHXJAERHVMaCc2k=

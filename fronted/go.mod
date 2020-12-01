@@ -12,7 +12,7 @@ require (
 )
 
 replace imooc-product/services => D:\GOPRO\src\imooc-product\services
-
+replace imooc-product/rabbitmq => D:\GOPRO\src\imooc-product\rabbitmq
 replace imooc-product/common => D:\GOPRO\src\imooc-product\common
 
 replace imooc-product/datamodels => D:\GOPRO\src\imooc-product\datamodels
