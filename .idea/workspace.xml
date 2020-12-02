@@ -23,26 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f153c126-c731-4077-b364-2cb0b0576cc0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/common/consistent.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumer.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datamodels/message.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/getOne.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rabbitmq/rabbitmq.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/ip.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datamodels/product.go" beforeDir="false" afterPath="$PROJECT_DIR$/datamodels/product.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datamodels/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/datamodels/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fronted/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/fronted/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fronted/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/fronted/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fronted/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/fronted/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fronted/web/controllers/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/fronted/web/controllers/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fronted/web/controllers/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/fronted/web/controllers/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fronted/web/controllers/product_controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/fronted/web/controllers/product_controller.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repositories/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/repositories/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repositories/product_repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/repositories/product_repository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/order_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/order_service.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/product_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/product_service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/filter.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/filter.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rabbitmq/rabbitmq.go" beforeDir="false" afterPath="$PROJECT_DIR$/rabbitmq/rabbitmq.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/validate.go" beforeDir="false" afterPath="$PROJECT_DIR$/validate.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +81,7 @@
       <recent name="D:\GOPRO\src\imooc-product\fronted\web" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build main.go (3)">
+  <component name="RunManager" selected="Go Build.go build validate.go">
     <configuration name="go build consumer.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="imooc-product" />
       <working_directory value="$PROJECT_DIR$" />
@@ -145,9 +129,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build validate.go" />
         <item itemvalue="Go Build.go build consumer.go" />
         <item itemvalue="Go Build.go build main.go (3)" />
-        <item itemvalue="Go Build.go build validate.go" />
         <item itemvalue="Go Build.go build test.go" />
         <item itemvalue="Go Build.go build user_controller.go" />
       </list>
@@ -249,9 +233,9 @@
       <screen x="-1600" y="0" width="1600" height="860" />
     </state>
     <state x="-1473" y="148" width="1374" height="654" key="dock-window-3/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1605007206111" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1606360115224">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1606813202192">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1606360115224" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1606813202192" />
   </component>
 </project>

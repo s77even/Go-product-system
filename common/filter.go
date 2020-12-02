@@ -1,6 +1,9 @@
 package common
 
-import "net/http"
+import (
+	"net/http"
+	"strings"
+)
 
 //声明一个函数类型
 type  FilterHandle func(rw http.ResponseWriter, req *http.Request)error
@@ -28,7 +31,7 @@ type webHandle func(rw http.ResponseWriter, req *http.Request)
 func(f *Filter)Handle(webHandle webHandle)func(rw http.ResponseWriter, r *http.Request){
 	return func(rw http.ResponseWriter, r *http.Request) {
 		for path, handle := range f.filterMap{
-			if path ==  r.RequestURI{
+			if strings.Contains(r.RequestURI,path){
 				err := handle(rw, r)
 				if err != nil {
 					_, _ = rw.Write([]byte(err.Error()))

@@ -8,6 +8,7 @@ import (
 	"imooc-product/datamodels"
 	"imooc-product/services"
 	"log"
+	"sync"
 )
 
 // uri  amqp://账号：密码@地址：端口/vhost
@@ -24,6 +25,8 @@ type RabbitMQ struct {
 	Key string
 	// 连接信息
 	Mqurl string
+	//防止竞争channel
+	sync.Mutex
 }
 
 // 创建结构体实例的函数
@@ -63,6 +66,8 @@ func NewSimpleRabbitMQ(queueName string) *RabbitMQ {
 // 简单模式下的消息生产代码
 func (r *RabbitMQ) PublishSimple(message string) error {
 	// 申请队列,该操作是幂等的，无需担心重复申请带来的副作用
+	r.Lock()
+	defer r.Unlock()
 	_, err := r.channel.QueueDeclare(
 		r.QueueName, // 队列名称name
 		false,       // 是否持久化 durable
