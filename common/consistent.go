@@ -104,7 +104,7 @@ func (c *Consistent) search(key uint32) int {
 }
 
 func (c *Consistent) Get(name string) (string, error) {
-	c.RLock()
+	c.Lock()
 	defer c.Unlock()
 
 	if len(c.Circle) == 0 {
